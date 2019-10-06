@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">WorldInfoApplication</string>
+    <string name="title_activity_base">BaseActivity</string>
+
+    <!--    Login  String start-->
+    <string name="hint_email">Email</string>
+    <string name="hint_pass">Password</string>
+    <string name="error_email">Please Enter Email</string>
+    <string name="error_pass">Please Enter Password</string>
+    <string name="login_btn">Login</string>
+    <string name="invalid_email">Please Enter Valid Email</string>
+    <string name="password_length">Password Length should be minimum 6</string>
+    <string name="login_success">Login Successfully</string>
+    <!--    Login  String end -->
+
+    <!-- Menu Activity Start-->
+    <string name="sports">Sports</string>
+    <string name="finance">Finance</string>
+    <string name="travel">Travel</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="location">Location</string>
+    <string name="science">Science</string>
+    <string name="food">Food</string>
+    <string name="jobs">Jobs</string>
+
+    <string name="sports_key">1</string>
+    <string name="finance_key">2</string>
+    <string name="travel_key">3</string>
+    <string name="entertainment_key">4</string>
+    <string name="location_key">5</string>
+    <string name="science_key">6</string>
+    <string name="food_key">7</string>
+    <string name="jobs_key">8</string>
+
+    <!--Menu Activity End-->
+
+</resources>
