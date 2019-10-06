@@ -138,7 +138,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         }
     }
 
-    
+
       private void  menuActivity(){
           Intent intent_Users= new Intent(LoginActivity.this,MenuActivity.class);
           intent_Users.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -1,6 +1,7 @@
 package com.example.worldinfoapplication.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +11,9 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.worldinfoapplication.FinanceActivity;
 import com.example.worldinfoapplication.R;
+import com.example.worldinfoapplication.SportsActivity;
 import com.example.worldinfoapplication.enitity.MenuData;
 
 import java.util.List;
@@ -59,6 +62,16 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuItemViewHolder> {
      * @param position call the activity
      */
     private  void  startActivity(Context context,int position) {
+        Intent mIntent=null;
+        switch (position){
+             case 0:
+                 mIntent=new Intent(mContext, SportsActivity.class);
+                 break;
+            case 1:
+                mIntent= new Intent(mContext, FinanceActivity.class);
+         }
+           context.startActivity(mIntent);
+
         //Intent mIntent = new Intent(mContext, DetailActivity.class);
         // mIntent.putExtra("Title", menuItemsList.get(holder.getAdapterPosition()).getActivityName());
         //mIntent.putExtra("Description", menuItemsList.get(holder.getAdapterPosition()).getActivityKey());
