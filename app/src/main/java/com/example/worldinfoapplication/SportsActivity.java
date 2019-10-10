@@ -56,4 +56,14 @@ public class SportsActivity extends BaseActivity implements CustomInterfaces.Vol
     public void onError(VolleyError error, String tag) {
 
     }
+
+
+    //get the value from intent
+    @Override
+    protected void intentProcess(Intent intent) {
+   /*     if (intent.hasExtra(getString(R.string.key_holding))) {
+            _mActivityName = intent.getStringExtra(getString(R.string.key_holding));
+        }*/
+
+    }
 }

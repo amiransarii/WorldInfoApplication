@@ -5,6 +5,8 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.worldinfoapplication.enitity.CustomInterfaces;
 import org.json.JSONObject;
 
+import java.util.Map;
+
 public class CustomJSONObjectRequest implements  Response.Listener<JSONObject>, Response.ErrorListener {
     private static String tag=CustomJSONObjectRequest.class.getSimpleName();
     private  LogUtils log=new LogUtils(tag,true);
@@ -29,6 +31,8 @@ public class CustomJSONObjectRequest implements  Response.Listener<JSONObject>, 
     public void onResponse(JSONObject response) {
         volleyResponse.onResponse(response, tag);
     }
+
+
 
     public JsonObjectRequest getJsonObjectRequest() {
         return jsonObjectRequest;
