@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import android.widget.Toast;
 
 import com.example.worldinfoapplication.receiver.ConnectionStateReceiver;
 import com.example.worldinfoapplication.util.LogUtils;
+import com.example.worldinfoapplication.util.SessionInfo;
 import com.example.worldinfoapplication.util.SharedPreferenceUtil;
 import com.example.worldinfoapplication.util.WorldInfoApplication;
 import com.google.android.material.snackbar.Snackbar;
@@ -65,6 +67,12 @@ public abstract class BaseActivity extends AppCompatActivity implements Connecti
         setContentView(getContentView());
         onViewReady(savedInstanceState, getIntent());
         sharedPreferenceUtil= new SharedPreferenceUtil(this);
+
+        getWorldInfoApplication().setBaseActivity(this);// TODO: 22/3/2018 test
+        // Vertical fixed
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        SessionInfo sInfo = SessionInfo.getInstance();
 
         //get the main activity instance
        // mainActivity=MainActivity.getInstance();
@@ -368,7 +376,31 @@ public abstract class BaseActivity extends AppCompatActivity implements Connecti
         return sharedPreferenceUtil.loadPrefBoolean(key);
     }
 
+    public WorldInfoApplication getWorldInfoApplication() {
+        return (WorldInfoApplication) getApplication();
+    }
 
 
+    /**
+     * When specified Activity already exists in startActivity (are instantiated),
+     * is called before {@link BaseActivity # onRestart ()}.
+     * If {@link #onCreate (Bundle)} is called, this method will not be called.
+     *
+     * @param intent intent information
+     */
+
+    @Override
+    final protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        // Session ID update
+        if (intent != null) {
+            setIntent(intent);
+            // Intent processing
+           // intentProcessBase(intent);
+        }
+    }
+
+    protected void intentProcess(Intent intent) {
+    }
 
 }

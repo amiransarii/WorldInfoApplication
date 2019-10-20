@@ -7,13 +7,13 @@ import com.example.worldinfoapplication.enitity.CustomInterfaces;
 
 import org.json.JSONArray;
 
-public class CustomJSONArrayObject implements  Response.Listener<JSONArray>, Response.ErrorListener {
+public class CustomJSONArrayRequest implements  Response.Listener<JSONArray>, Response.ErrorListener {
     private CustomInterfaces.VolleyJsonArrayResponse volleyResponse;
-    private static String tag=CustomJSONArrayObject.class.getSimpleName();
+    private static String tag= CustomJSONArrayRequest.class.getSimpleName();
     private JsonArrayRequest jsonArrayRequest;
 
-    public CustomJSONArrayObject( String url, String tag,
-                                   CustomInterfaces.VolleyJsonArrayResponse volleyResponse) {
+    public CustomJSONArrayRequest(String url, String tag,
+                                  CustomInterfaces.VolleyJsonArrayResponse volleyResponse) {
         this.volleyResponse = volleyResponse;
         this.tag= tag;
 

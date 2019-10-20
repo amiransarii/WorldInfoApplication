@@ -1,13 +1,11 @@
 package com.example.worldinfoapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.android.volley.VolleyError;
 import com.example.worldinfoapplication.enitity.CustomInterfaces;
-import com.example.worldinfoapplication.util.CustomJSONArrayObject;
+import com.example.worldinfoapplication.util.CustomJSONArrayRequest;
 import com.example.worldinfoapplication.util.WorldInfoApplication;
 
 import org.json.JSONArray;
@@ -26,7 +24,7 @@ public class FinanceActivity extends BaseActivity implements CustomInterfaces.Vo
         super.onViewReady(savedInstanceState, intent);
 
         String url="https://api.androidhive.info/volley/person_array.json";
-        CustomJSONArrayObject customJSONArrayObject= new CustomJSONArrayObject(url,TAG,this);
+        CustomJSONArrayRequest customJSONArrayObject= new CustomJSONArrayRequest(url,TAG,this);
         WorldInfoApplication.getInstance().addToRequestQueue(customJSONArrayObject.getJsonArrayRequest());
 
     }

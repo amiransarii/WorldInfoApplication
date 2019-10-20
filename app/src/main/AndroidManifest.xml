@@ -34,6 +34,14 @@
             </intent-filter>
         </activity>
 
+        <!-- <<Amir Ansari 120919 add start>>-->
+       <!-- <activity
+            android:name=".OutstandingMarginValueNarrowingActivity"
+            android:screenOrientation="portrait"/>-->
+        <!-- Add the below line if need to show portrait and landscape mode -->
+        <!--android:configChanges="orientation|fontScale|screenSize"/>-->
+        <!-- <<Amir Ansari 120919 add end>>-->
+
         <receiver
             android:name=".receiver.ConnectionStateReceiver"
             android:enabled="true">
