@@ -1,13 +1,10 @@
 package com.example.worldinfoapplication.util;
-
-<<<<<<< HEAD
-import android.widget.Toast;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 
 import java.util.HashMap;
@@ -51,16 +48,6 @@ public class CustomStringRequest  {
 
     return mResponse;
      }
-=======
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.example.worldinfoapplication.enitity.CustomInterfaces;
 
-public class CustomStringRequest {
-
-    private static String tag=CustomStringRequest.class.getSimpleName();
-    private  LogUtils log=new LogUtils(tag,true);
-  //  private CustomInterfaces.VolleyStringResponse
-    private JsonObjectRequest jsonObjectRequest;
->>>>>>> 7cdcd59ddf6b37e8fedd2e1e1704396976c4da0e
 
 }

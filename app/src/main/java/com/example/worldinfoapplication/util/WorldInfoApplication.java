@@ -17,14 +17,15 @@ import com.example.worldinfoapplication.receiver.ConnectionStateReceiver;
 
 import java.util.UUID;
 
-public class WorldInfoApplication extends Application  {
+public class WorldInfoApplication extends Application {
 
-    private static String TAG=WorldInfoApplication.class.getSimpleName();
+    private static String TAG = WorldInfoApplication.class.getSimpleName();
 
     private BaseActivity baseActivity;
 
     /**
      * create the instance of WorldInfoApplication
+     *
      * @param mInstance
      */
     private static WorldInfoApplication mInstance;
@@ -46,63 +47,63 @@ public class WorldInfoApplication extends Application  {
     @Override
     public void onCreate() {
         super.onCreate();
-        mInstance=this;
+        mInstance = this;
     }
 
-    /**create the instance and return it
+    /**
+     * create the instance and return it
+     *
      * @return current instance
      */
-    public static synchronized WorldInfoApplication getInstance(){
+    public static synchronized WorldInfoApplication getInstance() {
         return mInstance;
     }
 
-    public void setConnectivityListener(ConnectionStateReceiver.Observer observer){
-        ConnectionStateReceiver.observer=observer;
+    public void setConnectivityListener(ConnectionStateReceiver.Observer observer) {
+        ConnectionStateReceiver.observer = observer;
     }
 
     /**
      * set the value of mRequest if its null
+     *
      * @return the request
      */
-     public RequestQueue getRequestQueue(){
-        if (mRequestQueue==null){
-            mRequestQueue= Volley.newRequestQueue(getApplicationContext());
+    public RequestQueue getRequestQueue() {
+        if (mRequestQueue == null) {
+            mRequestQueue = Volley.newRequestQueue(getApplicationContext());
         }
-         return mRequestQueue;
-     }
+        return mRequestQueue;
+    }
 
     /**
-     *
      * @param request pass the request
-     * @param tag set the tag or default tag
-     * @param <T> type
+     * @param tag     set the tag or default tag
+     * @param <T>     type
      */
-      public <T> void addToRequestQueue(Request<T> request, String tag){
-         //set the default value if tag is empty
-          request.setTag(AppStringUtils.isEmpty(tag)?TAG:tag);
-          getRequestQueue().add(request);
+    public <T> void addToRequestQueue(Request<T> request, String tag) {
+        //set the default value if tag is empty
+        request.setTag(AppStringUtils.isEmpty(tag) ? TAG : tag);
+        getRequestQueue().add(request);
 
-      }
+    }
 
     /**
-     *
      * @param request pass the request and set default tag
      * @param <T>
      */
-    public <T> void addToRequestQueue(Request<T> request){
-          request.setTag(TAG);
-          getRequestQueue().add(request);
-       }
+    public <T> void addToRequestQueue(Request<T> request) {
+        request.setTag(TAG);
+        getRequestQueue().add(request);
+    }
 
     /**
-     *
-     * @param  tag pass this and cancel tag request
+     * @param tag pass this and cancel tag request
      */
-    public void cancelPendingRequest(Object tag){
-        if(mRequestQueue!=null){
+    public void cancelPendingRequest(Object tag) {
+        if (mRequestQueue != null) {
             mRequestQueue.cancelAll(tag);
         }
-       }
+    }
 
 
     /**
@@ -112,7 +113,7 @@ public class WorldInfoApplication extends Application  {
      * @return user agent
      */
     public String getUserAgent(String connName) throws PackageManager.NameNotFoundException {
-        String appVersion=this.getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+        String appVersion = this.getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
         StringBuilder sb = new StringBuilder("iSPEED/");
         sb.append(appVersion + "(");
         sb.append(android.os.Build.MODEL + "/");
@@ -128,15 +129,15 @@ public class WorldInfoApplication extends Application  {
 
 
     private String getUuid(Context context) {
-        String uuid=null;
+        String uuid = null;
         if (uuid == null) {
             SharedPreferences spf = PreferenceManager.getDefaultSharedPreferences(this);
-         //   uuid = spf.getString(getString(R.string.pref_uuid), null);
+            //   uuid = spf.getString(getString(R.string.pref_uuid), null);
 
             if (uuid == null) {
                 uuid = UUID.randomUUID().toString();
                 SharedPreferences.Editor editor = spf.edit();
-               // editor.putString(getString(R.string.pref_uuid), uuid);
+                // editor.putString(getString(R.string.pref_uuid), uuid);
                 editor.commit();
             }
         }
@@ -144,10 +145,6 @@ public class WorldInfoApplication extends Application  {
 
     }
 
-<<<<<<< HEAD
-
-
-=======
     /**
      * To get the screen resolution.
      *
@@ -173,8 +170,6 @@ public class WorldInfoApplication extends Application  {
     }
 
 
-
-
     public void setBaseActivity(BaseActivity bAct) {
         baseActivity = bAct;
     }
@@ -182,5 +177,4 @@ public class WorldInfoApplication extends Application  {
     public BaseActivity getBaseActivity() {
         return baseActivity;
     }
->>>>>>> 7cdcd59ddf6b37e8fedd2e1e1704396976c4da0e
 }
