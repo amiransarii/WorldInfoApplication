@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.worldinfoapplication.FinanceActivity;
 import com.example.worldinfoapplication.R;
 import com.example.worldinfoapplication.SportsActivity;
+import com.example.worldinfoapplication.TravelActivity;
 import com.example.worldinfoapplication.enitity.MenuData;
 
 import java.util.List;
@@ -22,6 +23,9 @@ import java.util.List;
  * Created by Amir Ansari on 06/10/19.
  */
 
+/**
+ * Unimplemented class
+ */
 public class MenuAdapter extends RecyclerView.Adapter<MenuItemViewHolder> {
 
     private Context mContext;
@@ -69,6 +73,11 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuItemViewHolder> {
                  break;
             case 1:
                 mIntent= new Intent(mContext, FinanceActivity.class);
+                break;
+            case 2:
+                mIntent= new Intent(mContext, TravelActivity.class);
+
+                default:
          }
            context.startActivity(mIntent);
 
@@ -94,6 +103,8 @@ class MenuItemViewHolder extends RecyclerView.ViewHolder {
         mTitle = itemView.findViewById(R.id.tvTitle);
         mCardView = itemView.findViewById(R.id.cardview);
     }
+
+
 
 
 }

@@ -34,4 +34,6 @@
 
     <!--Menu Activity End-->
 
+    <string name="key_view_holder">key_view_holder</string>
+
 </resources>

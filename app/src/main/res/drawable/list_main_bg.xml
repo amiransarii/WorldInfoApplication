@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Main background of the list -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+  <!-- When ordinary -->
+  <item android:state_pressed="false" android:drawable="@android:color/transparent"></item>
+  <!-- When clicked -->
+  <item android:state_pressed="true" android:drawable="@color/background_list_click"></item>
+</selector>

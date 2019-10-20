@@ -3,7 +3,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
-import com.example.worldinfoapplication.adapter.MenuAdapter;
+
+import com.example.worldinfoapplication.adapter.WorldMenuInfoAdapter;
 import com.example.worldinfoapplication.enitity.MenuData;
 
 import java.util.ArrayList;
@@ -66,7 +67,8 @@ public class MenuActivity extends BaseActivity {
         menuDataList.add( new MenuData(getString(R.string.jobs), getString(R.string.jobs_key),
                 R.drawable.jobs));
 
-        MenuAdapter myAdapter = new  MenuAdapter(MenuActivity.this, menuDataList);
+       WorldMenuInfoAdapter myAdapter = new WorldMenuInfoAdapter(MenuActivity.this, menuDataList);
+       // MenuAdapter myAdapter = new  MenuAdapter(MenuActivity.this, menuDataList);
         mRecyclerView.setAdapter(myAdapter);
     }
 }

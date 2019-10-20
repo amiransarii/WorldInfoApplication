@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FinanceActivity"></activity>
+        <activity android:name=".TravelActivity"></activity>
+        <activity android:name=".FinanceActivity" />
         <activity android:name=".SportsActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".LoginActivity" />
